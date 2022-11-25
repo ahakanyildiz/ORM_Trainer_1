@@ -1,0 +1,37 @@
+﻿@model User
+
+
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<script>
+	function sifirla() {
+		var kadi = document.getElementById("login").value;
+		var aEtiketi = document.getElementById("forgotPass");
+        document.getElementById("selamVer").innerHTML = kadi;
+        window.location.href = "/Login/SifremiUnuttum/" + kadi;
+	}
+
+
+</script>
+
+
+<div id="selamVer"></div>
+<div id="modalUsing">
+</div>
+<div class="wrapper fadeInDown">
+	<div id="formContent" style="background-image:linear-gradient(0deg, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.6));">
+
+		<form method="post">
+			<input type="text" id="login" class="fadeIn second my-5" name="UserName" placeholder="login" value=" ">
+			<input type="text" id="password" class="fadeIn third" name="UserPassword" placeholder="password">
+			<input type="submit" class="fadeIn fourth my-5" value="Log In">
+		</form>
+
+		<div id="formFooter">
+			<a id="forgotPass" href="#" onclick="sifirla()" class="underlineHover">Şifreni mi unuttun?</a>
+		</div>
+	</div>
+</div>
+

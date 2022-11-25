@@ -1,0 +1,30 @@
+﻿@*
+<form method="post" asp-action="SifremiUnuttum">
+	<label>Kullanıcı Adınızı Giriniz: </label>
+	<input type="text" name="userName" />
+	<button id="btnSifirla" onclick="showTalimat()" type="submit">Sıfırla</button>
+</form>
+
+<a id="algo" class="btn btn-primary" onclick="showTalimat()">Yeni Şifrenizin Algoritması İçin Tıklayınız</a>
+
+<div id="talimatDiv" style="display:none">
+	<h1>Yeni Şifren Oluşturuldu</h1>
+
+	<p>Şifreni öğrenmek istiyorsan aşağıdaki talimatları uygulayıp giriş yapabilirsin.</p>
+
+	<p>Baba adının ilk 2 harfi + anne adının son 2 harfi + (anneuzunluk + 10) + (babauzunluk + 10)</p>
+</div>
+
+<div id="selamVer"></div>
+
+<script>
+	function showTalimat(){
+        var talim = document.getElementById("talimatDiv");
+        talim.style.display = "block";
+		var selam = document.getElementById("selamVer");
+        selam.innerHTML = "Merhaba";
+		alert("SELAM");
+	}
+</script>
+*@
+

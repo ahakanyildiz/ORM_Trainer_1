@@ -1,0 +1,36 @@
+﻿@model IEnumerable<Project>
+
+<table class="table table-bordered">
+	<tr>
+		<th>Name</th>
+		<th>Content</th>
+		<th>Create Time</th>
+		<th>Last Time</th>
+		<th>Owner</th>
+		<th>Status</th>
+	</tr>
+
+	@foreach (var item in Model)
+	{
+		<tr>
+			<td>@item.ProjectName</td>
+			<td>@item.ProjectContent</td>
+			<td>@item.CreateTime.ToShortDateString()</td>
+			<td>@item.LastTime.ToShortDateString()</td>
+			<td>@item.Owner.OwnerName</td>
+			@if (item.StatusID == 1)
+			{
+				<td><span class="badge bg-primary">Başlamadı</span></td>
+			}
+			else if (item.StatusID == 2)
+			{
+				<td><span class="badge bg-warning text-dark">Devam Ediyor</span></td>
+			}
+			else
+			{
+				
+				<td><span class="badge bg-danger">Bitti</span></td>
+			}
+		</tr>
+	}
+</table>
